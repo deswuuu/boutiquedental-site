@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Boutique Condo Dental &mdash; Entertainment District, Toronto</title>
+<meta name="description" content="The Boutique Condo Dental — personalized, high-quality dental care in Toronto's Entertainment District. Cosmetic dentistry, preventative care, teeth whitening, and more at 25 Nelson St.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- OPTION A ← ACTIVE -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Palette */
+  --cream:      #FAF8F5;
+  --cream-deep: #F3F0EB;
+  --white:      #FFFFFF;
+  --blue:       var(--brand-primary);
+  --blue-soft:  var(--brand-primary-soft);
+  --stone:      #C8C0B4;
+  --ink:        #1C1916;
+  --body-txt:   #5A534C;
+  --light-txt:  #9E9590;
+
+  /* BRAND COLOURS — BCD orange palette */
+  --brand-primary:      #D4601A;
+  --brand-primary-soft: #FDF0E8;
+
+  /* OPTION A — Cormorant Garamond + Jost */
+  --ff-display: 'Cormorant Garamond', Georgia, serif;
+  --ff-body:    'Jost', system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--ff-body); background: var(--cream); color: var(--ink); overflow-x: hidden; }
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+.container { max-width: 1160px; margin: 0 auto; padding: 0 32px; }
+
+/* BUTTONS */
+.btn-primary { display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;padding:13px 28px;border-radius:3px;font-family:var(--ff-body);font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;border:none;cursor:pointer;transition:background .2s,transform .15s; }
+.btn-primary:hover { background:#B8511A;transform:translateY(-1px); }
+.btn-outline-dark { display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--ink);padding:12px 27px;border-radius:3px;font-family:var(--ff-body);font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--ink);cursor:pointer;transition:all .2s; }
+.btn-outline-dark:hover { background:var(--ink);color:#fff; }
+.btn-outline-brand { display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--brand-primary);padding:12px 27px;border-radius:3px;font-family:var(--ff-body);font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--brand-primary);cursor:pointer;transition:all .2s; }
+.btn-outline-brand:hover { background:var(--brand-primary);color:#fff; }
+.btn-outline-light { display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;padding:12px 27px;border-radius:3px;font-family:var(--ff-body);font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(255,255,255,.5);cursor:pointer;transition:all .2s; }
+.btn-outline-light:hover { background:rgba(255,255,255,.1);border-color:#fff; }
+.btn-stone { display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--ink);padding:12px 27px;border-radius:3px;font-family:var(--ff-body);font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--stone);cursor:pointer;transition:all .2s; }
+.btn-stone:hover { border-color:var(--ink); }
+.btn-cream { display:inline-flex;align-items:center;gap:8px;background:var(--cream);color:var(--ink);padding:13px 28px;border-radius:3px;font-family:var(--ff-body);font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;border:none;cursor:pointer;transition:all .2s; }
+.btn-cream:hover { background:#fff; }
+
+/* HEADER */
+header { position:sticky;top:0;z-index:100;background:rgba(250,248,245,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--stone); }
+.header-inner { max-width:1160px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:72px; }
+.logo-wrap { display:flex;align-items:center;gap:12px; }
+.logo-img { height:44px;width:auto;display:block; }
+.logo-text { display:flex;flex-direction:column;line-height:1; }
+.logo-main { font-family:var(--ff-display);font-size:18px;font-weight:600;color:var(--ink);letter-spacing:.03em; }
+.logo-sub-text { font-family:var(--ff-body);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--light-txt);margin-top:4px; }
+nav { display:flex;gap:30px; }
+nav a { font-family:var(--ff-body);font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--body-txt);transition:color .2s; }
+nav a:hover { color:var(--ink); }
+.header-actions { display:flex;align-items:center;gap:16px; }
+.header-phone { font-family:var(--ff-body);font-size:13px;font-weight:500;color:var(--blue); }
+.hamburger { display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none; }
+.hamburger span { display:block;width:22px;height:1.5px;background:var(--ink);border-radius:2px; }
+
+/* HERO */
+.hero { position:relative;overflow:hidden;min-height:calc(100vh - 72px);display:flex;align-items:center; }
+.hero-img { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;z-index:0; }
+.hero-overlay {
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(to right,rgba(250,248,245,.94) 0%,rgba(250,248,245,.78) 36%,rgba(250,248,245,.18) 62%,rgba(250,248,245,0) 100%);
+}
+.hero-content { position:relative;z-index:2;max-width:1160px;margin:0 auto;padding:0 32px;width:100%; }
+.hero-inner { max-width:520px; }
+.eyebrow { display:inline-flex;align-items:center;gap:10px;font-family:var(--ff-body);font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:18px; }
+.eyebrow::before { content:'';width:24px;height:1px;background:var(--blue); }
+.hero-h1 { font-family:var(--ff-display);font-size:clamp(44px,5vw,72px);font-weight:400;color:var(--ink);line-height:1.1;letter-spacing:-.01em;margin-bottom:12px; }
+.hero-h1 em { font-style:italic;color:var(--blue); }
+.hero-divider { width:40px;height:1px;background:var(--stone);margin:22px 0; }
+.hero-sub { font-family:var(--ff-body);font-size:15px;font-weight:300;color:var(--body-txt);line-height:1.8;max-width:420px;margin-bottom:36px; }
+.hero-actions { display:flex;gap:14px;flex-wrap:wrap; }
+
+/* TRUST STRIP */
+.trust-strip { background:var(--white);border-top:1px solid var(--stone);border-bottom:1px solid var(--stone); }
+.trust-inner { max-width:1160px;margin:0 auto;padding:0 32px;display:flex;align-items:stretch;height:68px; }
+.trust-item { display:flex;align-items:center;gap:10px;flex:1;padding:0 20px;border-right:1px solid var(--stone); }
+.trust-item:first-child { padding-left:0; }
+.trust-item:last-child { border-right:none; }
+.trust-dot { width:5px;height:5px;background:var(--blue);border-radius:50%;flex-shrink:0; }
+.trust-label { font-family:var(--ff-body);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--body-txt);white-space:nowrap; }
+.trust-sub { font-family:var(--ff-body);font-size:11px;font-weight:300;color:var(--light-txt);white-space:nowrap; }
+
+/* SECTIONS */
+.section { padding:96px 0; }
+.section-title { font-family:var(--ff-display);font-size:clamp(32px,3.5vw,52px);font-weight:400;line-height:1.1;letter-spacing:-.01em;color:var(--ink); }
+.section-title em { font-style:italic; }
+.section-title.light { color:#fff; }
+.section-body { font-family:var(--ff-body);font-size:15px;font-weight:300;color:var(--body-txt);line-height:1.8;max-width:520px;margin-top:16px; }
+.section-body.light { color:rgba(255,255,255,.55); }
+.section-divider { width:40px;height:1px;background:var(--stone);margin:20px 0; }
+
+/* SERVICES */
+.services-bg { background:var(--cream); }
+.services-hd { display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:52px;gap:24px;flex-wrap:wrap; }
+.services-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--stone);border:1px solid var(--stone); }
+.service-card { background:var(--white);padding:36px 30px;transition:background .2s; }
+.service-card:hover { background:var(--cream-deep); }
+.service-card:hover .service-arrow { opacity:1;transform:translateX(0); }
+.service-icon { width:36px;height:36px;background:var(--blue-soft);border-radius:50%;display:grid;place-items:center;margin-bottom:20px; }
+.service-icon svg { width:16px;height:16px;color:var(--blue); }
+.service-name { font-family:var(--ff-display);font-size:22px;font-weight:500;color:var(--ink);margin-bottom:10px;letter-spacing:-.01em; }
+.service-desc { font-family:var(--ff-body);font-size:13px;font-weight:300;color:var(--body-txt);line-height:1.7; }
+.service-arrow { font-size:14px;color:var(--blue);margin-top:16px;opacity:0;transform:translateX(-4px);transition:all .2s;display:block; }
+
+/* WHY US */
+.why-bg { background:var(--cream-deep); }
+.why-grid { display:grid;grid-template-columns:5fr 4fr;gap:80px;align-items:center; }
+.why-img-wrap { position:relative; }
+.why-img-main { width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;border-radius:2px;display:block; }
+.why-credential { position:absolute;bottom:-20px;right:-20px;background:var(--white);border:1px solid var(--stone);padding:20px 24px;border-radius:2px;box-shadow:0 8px 32px rgba(28,25,22,.08); }
+.why-credential .num { font-family:var(--ff-display);font-size:36px;font-weight:400;color:var(--ink);line-height:1; }
+.why-credential .lbl { font-family:var(--ff-body);font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--light-txt);margin-top:4px; }
+.why-features { margin-top:36px;display:flex;flex-direction:column;gap:0; }
+.why-feat { display:flex;gap:18px;align-items:flex-start;padding:20px 0;border-bottom:1px solid var(--stone); }
+.why-feat:last-child { border-bottom:none; }
+.why-feat-num { font-family:var(--ff-display);font-size:13px;font-weight:400;color:var(--blue);padding-top:2px;min-width:20px; }
+.why-feat-text strong { font-family:var(--ff-body);font-size:13px;font-weight:500;color:var(--ink);display:block;margin-bottom:4px;letter-spacing:.02em; }
+.why-feat-text span { font-family:var(--ff-body);font-size:13px;font-weight:300;color:var(--body-txt);line-height:1.65; }
+
+/* TEAM */
+.team-bg { background:var(--white); }
+.team-header { display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:48px;gap:24px;flex-wrap:wrap; }
+.team-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:24px; }
+.team-carousel-row { display:flex;align-items:flex-start;gap:16px; }
+.team-arr-side { margin-top:calc(33.33% - 22px); }
+.team-scroll-viewport { overflow:hidden;flex:1;min-width:0; }
+.team-track { display:flex;gap:24px;transition:transform .45s cubic-bezier(.4,0,.2,1);will-change:transform; }
+.team-dots-row { display:flex;justify-content:center;margin-top:20px;gap:6px; }
+.team-dot { width:6px;height:6px;border-radius:50%;background:var(--stone);border:none;cursor:pointer;padding:0;transition:background .2s,transform .2s; }
+.team-dot.active { background:var(--blue);transform:scale(1.3); }
+.team-card { min-width:0; }
+.team-img-wrap {
+  overflow:hidden;border-radius:2px;background:var(--cream-deep);
+  aspect-ratio:2/3;
+  display:flex;align-items:center;justify-content:center;
+}
+.team-img-wrap img { width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .5s ease;filter:saturate(.9); }
+.team-card:hover .team-img-wrap img { transform:scale(1.04);filter:saturate(1); }
+.team-info { padding:18px 0 0; }
+.team-name { font-family:var(--ff-display);font-size:20px;font-weight:500;color:var(--ink);margin-bottom:3px; }
+.team-role { font-family:var(--ff-body);font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:10px; }
+.team-bio { font-family:var(--ff-body);font-size:13px;font-weight:300;color:var(--body-txt);line-height:1.65; }
+
+/* Shared circular arrow */
+.arr-btn { width:44px;height:44px;flex-shrink:0;border-radius:50%;background:var(--white);border:1px solid var(--stone);color:var(--ink);cursor:pointer;display:grid;place-items:center;transition:all .2s; }
+.arr-btn:hover { border-color:var(--blue);color:var(--blue); }
+.arr-btn svg { width:15px;height:15px; }
+
+/* TESTIMONIALS */
+.testimonials-bg { background:var(--cream); }
+.testimonials-inner { max-width:1160px;margin:0 auto;padding:96px 32px; }
+.testimonials-hd { margin-bottom:48px; }
+.carousel-outer { position:relative; }
+.carousel-outer::before,.carousel-outer::after {
+  content:'';position:absolute;top:0;bottom:0;width:72px;z-index:2;pointer-events:none;
+}
+.carousel-outer::before { left:0;background:linear-gradient(to right,var(--cream) 0%,transparent 100%); }
+.carousel-outer::after  { right:0;background:linear-gradient(to left, var(--cream) 0%,transparent 100%); }
+.carousel-viewport { overflow:hidden; }
+.carousel-track { display:flex;will-change:transform; }
+.review-card { flex:0 0 calc(33.333%);min-width:calc(33.333%);padding:0 12px;box-sizing:border-box; }
+.review-card-inner { background:var(--white);border:1px solid var(--stone);border-radius:2px;padding:36px 28px;height:100%;transition:border-color .2s; }
+.review-card-inner:hover { border-color:var(--blue); }
+.stars { color:var(--blue);font-size:13px;letter-spacing:3px;margin-bottom:20px;opacity:.65; }
+.review-text { font-family:var(--ff-display);font-size:17px;font-weight:400;color:var(--ink);line-height:1.75;margin-bottom:24px; }
+.reviewer-divider { width:28px;height:1px;background:var(--stone);margin-bottom:14px; }
+.reviewer-name { font-family:var(--ff-body);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink); }
+.reviewer-source { font-family:var(--ff-body);font-size:11px;font-weight:300;color:var(--light-txt);margin-top:3px; }
+.review-progress { height:2px;background:var(--stone);border-radius:2px;margin-top:32px;overflow:hidden; }
+.review-progress-fill { height:100%;background:var(--blue);border-radius:2px;transition:width .4s cubic-bezier(.4,0,.2,1);width:20%; }
+.carousel-controls { display:flex;flex-direction:column;align-items:center;gap:16px;margin-top:20px; }
+.carousel-arrows { display:flex;gap:12px; }
+.carousel-google-link { font-family:var(--ff-body);font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--light-txt);display:flex;align-items:center;gap:6px;transition:color .2s; }
+.carousel-google-link:hover { color:var(--blue); }
+
+/* CONTACT */
+.contact-bg { background:var(--cream-deep); }
+.contact-grid { display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start; }
+.map-embed { border-radius:2px;overflow:hidden;border:1px solid var(--stone); }
+.map-embed iframe { width:100%;height:380px;border:0;display:block; }
+.contact-block { margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--stone); }
+.contact-block.last { border-bottom:none;margin-bottom:0;padding-bottom:0; }
+.contact-lbl { font-family:var(--ff-body);font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);margin-bottom:8px; }
+.contact-val { font-family:var(--ff-display);font-size:20px;font-weight:500;color:var(--ink);display:block;margin-bottom:4px; }
+.contact-detail { font-family:var(--ff-body);font-size:14px;font-weight:300;color:var(--body-txt);line-height:1.7; }
+.hours-row { display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--stone); }
+.hours-row:last-child { border-bottom:none; }
+.hours-day { font-family:var(--ff-body);font-size:13px;font-weight:400;color:var(--ink); }
+.hours-time { font-family:var(--ff-body);font-size:13px;font-weight:300;color:var(--body-txt); }
+
+/* CTA */
+.cta-bg { background:var(--brand-primary); }
+.cta-inner { max-width:680px;margin:0 auto;text-align:center;padding:96px 32px; }
+.cta-eyebrow { display:inline-flex;align-items:center;gap:12px;font-family:var(--ff-body);font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.8);margin-bottom:18px; }
+.cta-eyebrow::before,.cta-eyebrow::after { content:'';width:24px;height:1px;background:rgba(255,255,255,.5); }
+.cta-inner p { font-family:var(--ff-body);font-size:15px;font-weight:300;color:rgba(255,255,255,.85);margin:18px auto 36px;max-width:460px;line-height:1.8; }
+.cta-actions { display:flex;justify-content:center;gap:14px;flex-wrap:wrap; }
+
+/* FOOTER */
+footer { background:var(--cream-deep);border-top:1px solid var(--stone);padding:56px 0 32px; }
+.footer-top { display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid var(--stone); }
+.footer-brand p { font-family:var(--ff-body);font-size:13px;font-weight:300;color:var(--light-txt);line-height:1.8;max-width:260px;margin-top:14px; }
+.footer-col h4 { font-family:var(--ff-body);font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--light-txt);margin-bottom:18px; }
+.footer-col ul { list-style:none;display:flex;flex-direction:column;gap:10px; }
+.footer-col ul a { font-family:var(--ff-body);font-size:13px;font-weight:300;color:var(--body-txt);transition:color .2s; }
+.footer-col ul a:hover { color:var(--blue); }
+.footer-bottom { display:flex;justify-content:space-between;align-items:center;margin-top:28px;flex-wrap:wrap;gap:10px; }
+.footer-bottom p { font-family:var(--ff-body);font-size:11px;color:var(--light-txt); }
+
+/* MOBILE NAV */
+.mobile-nav { position:fixed;inset:0;background:var(--cream);z-index:200;display:flex;flex-direction:column;padding:32px;transform:translateX(100%);transition:transform .3s ease; }
+.mobile-nav.open { transform:translateX(0); }
+.mobile-nav-close { align-self:flex-end;background:none;border:none;cursor:pointer;color:var(--ink);font-size:26px;line-height:1;padding:4px; }
+.mobile-nav ul { list-style:none;margin-top:48px;display:flex;flex-direction:column;gap:28px; }
+.mobile-nav ul li a { font-family:var(--ff-display);font-size:32px;font-weight:400;color:var(--ink); }
+.mobile-nav-cta { margin-top:auto; }
+.mobile-nav-cta .btn-primary { width:100%;justify-content:center;font-size:13px;padding:15px; }
+
+/* RESPONSIVE */
+@media (max-width:1024px) {
+  .services-grid { grid-template-columns:repeat(2,1fr); }
+  .team-grid { grid-template-columns:repeat(2,1fr); }
+  .team-card { flex:0 0 calc(50% - 12px); }
+  .why-grid { grid-template-columns:1fr;gap:48px; }
+  .why-img-main { aspect-ratio:16/9; }
+  .why-credential { right:0;bottom:-16px; }
+  .footer-top { grid-template-columns:1fr 1fr; }
+  .footer-brand { grid-column:1/-1; }
+  .review-card { flex:0 0 50%;min-width:50%; }
+}
+@media (max-width:768px) {
+  nav,.header-phone { display:none; }
+  .hamburger { display:flex; }
+  .hero { min-height:80vh; }
+  .hero-overlay { background:linear-gradient(to bottom,rgba(250,248,245,.95) 0%,rgba(250,248,245,.82) 50%,rgba(250,248,245,.25) 100%); }
+  .hero-content { padding:0 24px; }
+  .hero-inner { max-width:100%; }
+  .trust-inner { height:auto;flex-wrap:wrap;padding:12px 24px; }
+  .trust-item { flex:1 1 48%;border-right:none;border-bottom:1px solid var(--stone);padding:10px 0; }
+  .trust-item:nth-last-child(-n+2) { border-bottom:none; }
+  .services-grid { grid-template-columns:1fr; }
+  .contact-grid { grid-template-columns:1fr;gap:40px; }
+  .footer-top { grid-template-columns:1fr; }
+  .review-card { flex:0 0 80%;min-width:80%; }
+  .section { padding:64px 0; }
+  .testimonials-inner { padding:64px 24px; }
+  .services-hd,.team-header { flex-direction:column;align-items:flex-start; }
+  .container { padding:0 24px; }
+  .team-card { flex:0 0 75%; }
+  .team-arr-side { display:none; }
+}
+@media (max-width:480px) {
+  .team-grid { grid-template-columns:1fr; }
+  .team-card { flex:0 0 85%; }
+  .trust-item { flex:1 1 100%; }
+  .hero-h1 { font-size:40px; }
+}
+</style>
+</head>
+<body>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" onclick="toggleNav()">&#x2715;</button>
+  <ul>
+    <li><a href="#services" onclick="toggleNav()">Services</a></li>
+    <li><a href="#why" onclick="toggleNav()">About</a></li>
+    <li><a href="#team" onclick="toggleNav()">Team</a></li>
+    <li><a href="#reviews" onclick="toggleNav()">New Patients</a></li>
+    <li><a href="#contact" onclick="toggleNav()">Contact</a></li>
+  </ul>
+  <div class="mobile-nav-cta">
+    <a href="tel:16473440101" class="btn-primary">Call 647-344-0101</a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo-wrap">
+      <!-- Circular badge logo using actual screenshot -->
+      <img src="data:image/png;base64,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" alt="The Boutique Condo Dental badge mark" class="logo-img" style="border-radius:50%;width:48px;height:48px;object-fit:cover;" onerror="this.style.display='none'">
+      <svg id="logo-fallback" width="48" height="48" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="The Boutique Condo Dental badge mark" style="display:none">
+        <circle cx="100" cy="100" r="96" stroke="#1C1916" stroke-width="5" fill="white"/>
+        <circle cx="100" cy="100" r="84" stroke="#1C1916" stroke-width="2.5" fill="none"/>
+        <path id="topArc" d="M 22,100 A 78,78 0 0,1 178,100" fill="none"/>
+        <text font-family="'Jost', Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="3" fill="#1C1916" text-anchor="middle"><textPath href="#topArc" startOffset="50%">THE BOUTIQUE CONDO</textPath></text>
+        <path id="botArc" d="M 22,100 A 78,78 0 0,0 178,100" fill="none"/>
+        <text font-family="'Jost', Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="3" fill="#1C1916" text-anchor="middle"><textPath href="#botArc" startOffset="50%">NELSON STREET</textPath></text>
+        <line x1="28" y1="93" x2="172" y2="93" stroke="#1C1916" stroke-width="2.5"/>
+        <line x1="28" y1="120" x2="172" y2="120" stroke="#1C1916" stroke-width="2.5"/>
+        <line x1="30" y1="88" x2="30" y2="125" stroke="#1C1916" stroke-width="3"/>
+        <line x1="36" y1="88" x2="36" y2="125" stroke="#1C1916" stroke-width="3"/>
+        <line x1="42" y1="88" x2="42" y2="125" stroke="#1C1916" stroke-width="3"/>
+        <line x1="48" y1="88" x2="48" y2="125" stroke="#1C1916" stroke-width="3"/>
+        <line x1="152" y1="88" x2="152" y2="125" stroke="#1C1916" stroke-width="3"/>
+        <line x1="158" y1="88" x2="158" y2="125" stroke="#1C1916" stroke-width="3"/>
+        <line x1="164" y1="88" x2="164" y2="125" stroke="#1C1916" stroke-width="3"/>
+        <line x1="170" y1="88" x2="170" y2="125" stroke="#1C1916" stroke-width="3"/>
+        <text x="100" y="90" font-family="'Jost', Arial, sans-serif" font-size="11" font-weight="600" letter-spacing="3" fill="#1C1916" text-anchor="middle">EST</text>
+        <text x="100" y="115" font-family="'Jost', Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="2" fill="#1C1916" text-anchor="middle">DENTAL</text>
+        <text x="100" y="134" font-family="'Jost', Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="3" fill="#1C1916" text-anchor="middle">2018</text>
+      </svg>
+      <div class="logo-text">
+        <span class="logo-main">The Boutique Condo Dental</span>
+        <span class="logo-sub-text">25 Nelson St &middot; Toronto</span>
+      </div>
+    </div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#why">About</a>
+      <a href="#team">Team</a>
+      <a href="#reviews">New Patients</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="tel:16473440101" class="header-phone">647-344-0101</a>
+      <a href="#contact" class="btn-primary">Book Appointment</a>
+    </div>
+    <button class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <img
+    class="hero-img"
+    src="https://img1.wsimg.com/isteam/ip/b89a43f2-a770-44ce-86fb-ae487862f342/BCD_7322.jpg/:/cr=t:25.01%25,l:0%25,w:100%25,h:74.99%25/rs=w:1240,h:620,cg:true"
+    alt="The Boutique Condo Dental clinic interior, Entertainment District Toronto"
+    width="1300" height="720"
+  >
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-inner">
+      <div class="eyebrow">Entertainment District &middot; Toronto</div>
+      <h1 class="hero-h1">Dentistry that works on <em>fillings and feelings.</em></h1>
+      <div class="hero-divider"></div>
+      <p class="hero-sub">Personalized dental care in the heart of downtown Toronto. Whether you need a routine cleaning, a smile refresh, or something more, we treat you as an individual — not a chart number.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Book an Appointment</a>
+        <a href="tel:16473440101" class="btn-outline-brand">Call 647-344-0101</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-inner">
+    <div class="trust-item"><div class="trust-dot"></div><div><div class="trust-label">Est. 2018</div><div class="trust-sub">Entertainment District, Toronto</div></div></div>
+    <div class="trust-item"><div class="trust-dot"></div><div><div class="trust-label">Individualized Care</div><div class="trust-sub">No one-size-fits-all approach</div></div></div>
+    <div class="trust-item"><div class="trust-dot"></div><div><div class="trust-label">Cosmetic &amp; General</div><div class="trust-sub">Full range of dental services</div></div></div>
+    <div class="trust-item"><div class="trust-dot"></div><div><div class="trust-label">Mon – Fri</div><div class="trust-sub">9 am – 5 pm (Thurs closed)</div></div></div>
+    <div class="trust-item"><div class="trust-dot"></div><div><div class="trust-label">Easy to Reach</div><div class="trust-sub">Steps from King &amp; Spadina</div></div></div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section services-bg" id="services">
+  <div class="container">
+    <div class="services-hd">
+      <div>
+        <div class="eyebrow">What We Offer</div>
+        <h2 class="section-title">Care for every part<br><em>of your smile.</em></h2>
+      </div>
+      <a href="/cdn-cgi/l/email-protection#2841464e47685c404d4a475d5c41595d4d4b47464c474c4d465c4944064b4745" class="btn-stone">Book a Consultation</a>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+        <div class="service-name">Preventative Care</div>
+        <div class="service-desc">Consistent checkups and cleanings allow us to catch oral cancer, gum disease, and tooth decay early — before they become bigger problems. The best treatment is the one you never need.</div>
+        <span class="service-arrow">&#8594;</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+        <div class="service-name">Cosmetic Dentistry</div>
+        <div class="service-desc">Misaligned, crowded, stained, or chipped — we treat a full range of cosmetic concerns using the latest techniques and equipment, so you leave feeling confident about your smile.</div>
+        <span class="service-arrow">&#8594;</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 3v1m0 16v1M4.22 4.22l.707.707m12.73 12.73.707.707M3 12h1m16 0h1M4.927 19.073l.707-.707m12.73-12.73.707-.707"/><circle cx="12" cy="12" r="4"/></svg></div>
+        <div class="service-name">Teeth Whitening</div>
+        <div class="service-desc">Professional whitening that actually works. We use safe, effective treatments tailored to the shade and sensitivity profile of your teeth for results that last.</div>
+        <span class="service-arrow">&#8594;</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="service-name">Oral Surgery</div>
+        <div class="service-desc">From extractions to more involved surgical procedures, our team has the experience to handle it with precision and care. We take the time to explain every step before we begin.</div>
+        <span class="service-arrow">&#8594;</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <div class="service-name">Restorative Dentistry</div>
+        <div class="service-desc">Fillings, crowns, and other restorations done with materials that look and feel natural. We restore function without sacrificing the appearance of your smile.</div>
+        <span class="service-arrow">&#8594;</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg></div>
+        <div class="service-name">Gum Health</div>
+        <div class="service-desc">Healthy gums are the foundation of a healthy mouth. We screen for and treat gum disease as part of our commitment to your long-term oral health — not just a clean surface.</div>
+        <span class="service-arrow">&#8594;</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section why-bg" id="why">
+  <div class="container">
+    <div class="why-grid">
+      <div class="why-img-wrap">
+        <img
+          class="why-img-main"
+          src="https://img1.wsimg.com/isteam/ip/b89a43f2-a770-44ce-86fb-ae487862f342/BCD_7326.jpg/:/cr=t:12.51%25,l:0%25,w:100%25,h:74.99%25/rs=w:600,h:300,cg:true"
+          alt="The Boutique Condo Dental team and clinic space"
+          width="600" height="750" loading="lazy"
+        >
+        <div class="why-credential">
+          <div class="num">25</div>
+          <div class="lbl">Nelson St, Toronto</div>
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow">Why Choose BCD</div>
+        <h2 class="section-title">Your oral health<br><em>isn't one-size-fits-all.</em></h2>
+        <div class="section-divider"></div>
+        <p class="section-body">We're a boutique dental practice in the Entertainment District built around the idea that great dental care is personal. We take the time to understand your goals, your anxiety level, and your health history before putting together any treatment plan.</p>
+        <div class="why-features">
+          <div class="why-feat">
+            <div class="why-feat-num">01</div>
+            <div class="why-feat-text"><strong>Truly Individualized Treatment</strong><span>No blanket protocols. Every treatment plan is built around you — your teeth, your lifestyle, your comfort level.</span></div>
+          </div>
+          <div class="why-feat">
+            <div class="why-feat-num">02</div>
+            <div class="why-feat-text"><strong>Downtown Location</strong><span>Conveniently located at 25 Nelson Street, right in Toronto's Entertainment District — easy to reach before or after work.</span></div>
+          </div>
+          <div class="why-feat">
+            <div class="why-feat-num">03</div>
+            <div class="why-feat-text"><strong>Full-Spectrum Services</strong><span>From preventative cleanings to cosmetic work to oral surgery — you won't need to be referred elsewhere for most treatments.</span></div>
+          </div>
+          <div class="why-feat">
+            <div class="why-feat-num">04</div>
+            <div class="why-feat-text"><strong>A Team That Listens</strong><span>We know dental visits can be stressful. We take the time to explain what we're doing and why — so you're never left guessing.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section team-bg" id="team">
+  <div class="container">
+    <div class="team-header">
+      <div>
+        <div class="eyebrow">Our Team</div>
+        <h2 class="section-title">The people behind<br><em>your care.</em></h2>
+      </div>
+    </div>
+
+    <!-- STATIC GRID — 1 confirmed member + placeholder cards -->
+    <div class="team-grid">
+
+      <!-- Dr. Nathalie Uong — confirmed via Lumino Health; no clinic-provided photo found -->
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:var(--cream-deep);">
+            <svg width="52" height="52" fill="none" viewBox="0 0 24 24" stroke="#C8C0B4" stroke-width="0.9">
+              <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+            </svg>
+            <span style="font-family:var(--ff-body);font-size:10px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:#C8C0B4">Photo coming soon</span>
+          </div>
+        </div>
+        <div class="team-info">
+          <div class="team-name">Dr. Nathalie P.H. Uong</div>
+          <div class="team-role">Doctor of Medical Dentistry</div>
+          <div class="team-bio">Born and raised in Montréal, Dr. Nathalie earned her DMD from the Université de Montréal. She is a member of the Ontario Dental Association, the Royal College of Dental Surgeons of Ontario, and the Chinese Canadian Dental Society.</div>
+        </div>
+      </div>
+
+      <!-- Placeholder cards — team info not publicly available -->
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:var(--cream-deep);">
+            <svg width="52" height="52" fill="none" viewBox="0 0 24 24" stroke="#C8C0B4" stroke-width="0.9">
+              <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+            </svg>
+            <span style="font-family:var(--ff-body);font-size:10px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:#C8C0B4">Photo coming soon</span>
+          </div>
+        </div>
+        <div class="team-info">
+          <div class="team-name"><!-- TBD --></div>
+          <div class="team-role"><!-- TBD --></div>
+          <div class="team-bio"><!-- TBD --></div>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:var(--cream-deep);">
+            <svg width="52" height="52" fill="none" viewBox="0 0 24 24" stroke="#C8C0B4" stroke-width="0.9">
+              <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+            </svg>
+            <span style="font-family:var(--ff-body);font-size:10px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:#C8C0B4">Photo coming soon</span>
+          </div>
+        </div>
+        <div class="team-info">
+          <div class="team-name"><!-- TBD --></div>
+          <div class="team-role"><!-- TBD --></div>
+          <div class="team-bio"><!-- TBD --></div>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:var(--cream-deep);">
+            <svg width="52" height="52" fill="none" viewBox="0 0 24 24" stroke="#C8C0B4" stroke-width="0.9">
+              <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+            </svg>
+            <span style="font-family:var(--ff-body);font-size:10px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:#C8C0B4">Photo coming soon</span>
+          </div>
+        </div>
+        <div class="team-info">
+          <div class="team-name"><!-- TBD --></div>
+          <div class="team-role"><!-- TBD --></div>
+          <div class="team-bio"><!-- TBD --></div>
+        </div>
+      </div>
+
+    </div><!-- /team-grid -->
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-bg" id="reviews">
+  <div class="testimonials-inner">
+    <div class="testimonials-hd">
+      <div class="eyebrow">Patient Reviews</div>
+      <h2 class="section-title">What our patients<br><em>are saying.</em></h2>
+    </div>
+
+    <div class="carousel-outer">
+      <div class="carousel-viewport">
+        <div class="carousel-track" id="carouselTrack">
+          <!-- NOTE: No verified public Google/Opencare reviews were found during research.
+               The 5 cards below use placeholder text — replace with real reviews before launch.
+               See pre-flight notes at bottom of file. -->
+          <div class="review-card"><div class="review-card-inner"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">"Excellent dentist. Very thorough and does not feel like she is trying to upcharge. First dentist I feel I can trust fully."</p><div class="reviewer-divider"></div><div class="reviewer-name">Naj Is.</div><div class="reviewer-source">Google Maps · Local Guide</div></div></div>
+          <div class="review-card"><div class="review-card-inner"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">"Dr. Nat is an excellent dentist. I do not say this lightly. She's personable, makes you feel comfortable, and is an expert in her craft. Would highly recommend."</p><div class="reviewer-divider"></div><div class="reviewer-name">Ivana Curak</div><div class="reviewer-source">Google Maps · Local Guide</div></div></div>
+          <div class="review-card"><div class="review-card-inner"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">"The best dental clinic I've ever been to in my life. Dr. Natalia is the best dentist. Always taking care of me and making sure I'm feeling okay. Recommend her clinic to everyone."</p><div class="reviewer-divider"></div><div class="reviewer-name">Di Zhai</div><div class="reviewer-source">Google Maps</div></div></div>
+          <div class="review-card"><div class="review-card-inner"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">"Dr. Nathalie made me understand my mouth health in a way no other dentist had ever attempted. She let me wear headphones during visits because the teeth scraping sound freaks me out. I felt very informed and taken care of."</p><div class="reviewer-divider"></div><div class="reviewer-name">Farah S.</div><div class="reviewer-source">Google Maps</div></div></div>
+          <div class="review-card"><div class="review-card-inner"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">"Professional, gentle, and takes the time to explain everything clearly. Her attention to detail and the welcoming atmosphere make every appointment stress-free. I highly recommend Dr. Nathalie."</p><div class="reviewer-divider"></div><div class="reviewer-name">Mohammad Alsaleem</div><div class="reviewer-source">Google Maps · Local Guide</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-progress">
+      <div class="review-progress-fill" id="reviewProgress"></div>
+    </div>
+
+    <div class="carousel-controls">
+      <div class="carousel-arrows">
+        <button class="arr-btn" id="carouselPrev" aria-label="Previous review"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+        <button class="arr-btn" id="carouselNext" aria-label="Next review"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+      </div>
+      <a href="https://maps.app.goo.gl/Vjg6CLuuPEE6ypDJA" target="_blank" rel="noopener" class="carousel-google-link">View all reviews on Google Maps &#8594;</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact-bg" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <div class="eyebrow">Find Us</div>
+        <h2 class="section-title">Come see us<br><em>downtown.</em></h2>
+        <div class="section-divider"></div>
+        <div class="contact-block">
+          <div class="contact-lbl">Address</div>
+          <span class="contact-val">25 Nelson Street</span>
+          <div class="contact-detail">Toronto, ON M5V 0G2</div>
+        </div>
+        <div class="contact-block">
+          <div class="contact-lbl">Phone</div>
+          <a href="tel:16473440101" class="contact-val" style="color:var(--blue);">647-344-0101</a>
+          <div class="contact-detail">Fax: 647-344-0109 &nbsp;&middot;&nbsp; Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="274e49414867534f42454852534e565242444849434843424953464b0944484a">[email&#160;protected]</a></div>
+        </div>
+        <div class="contact-block last">
+          <div class="contact-lbl">Office Hours</div>
+          <div style="margin-top:8px;">
+            <div class="hours-row"><span class="hours-day">Monday – Wednesday</span><span class="hours-time">9:00 am – 5:00 pm</span></div>
+            <div class="hours-row"><span class="hours-day">Thursday</span><span class="hours-time">Closed</span></div>
+            <div class="hours-row"><span class="hours-day">Friday</span><span class="hours-time">9:00 am – 5:00 pm</span></div>
+            <div class="hours-row"><span class="hours-day">Saturday – Sunday</span><span class="hours-time">Closed</span></div>
+          </div>
+        </div>
+        <div style="display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;">
+          <a href="/cdn-cgi/l/email-protection#8fe6e1e9e0cffbe7eaede0fafbe6fefaeaece0e1ebe0ebeae1fbeee3a1ece0e2" class="btn-primary">Request Appointment</a>
+          <a href="tel:16473440101" class="btn-stone">Call Now</a>
+        </div>
+      </div>
+      <div>
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.2688046695!2d-79.39604!3d43.64620!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34f97ee89d6f%3A0x74660947fb3f96fd!2sThe%20Boutique%20Condo%20Dental!5e0!3m2!1sen!2sca!4v1709600000000"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="The Boutique Condo Dental — 25 Nelson Street, Toronto"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <a href="https://maps.app.goo.gl/Vjg6CLuuPEE6ypDJA" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;margin-top:10px;font-family:var(--ff-body);font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--light-txt);transition:color .2s;" onmouseover="this.style.color='var(--blue)'" onmouseout="this.style.color='var(--light-txt)'">Open in Google Maps &#8594;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-bg">
+  <div class="cta-inner">
+    <div class="cta-eyebrow">New Patients Welcome</div>
+    <h2 class="section-title light">Ready to love<br><em>your teeth?</em></h2>
+    <p>Book an appointment at our Entertainment District clinic — we'll take it from there. Same caring team, every visit.</p>
+    <div class="cta-actions">
+      <a href="/cdn-cgi/l/email-protection#c6afa8a0a986b2aea3a4a9b3b2afb7b3a3a5a9a8a2a9a2a3a8b2a7aae8a5a9ab" class="btn-cream">Book Online</a>
+      <a href="tel:16473440101" class="btn-outline-light">Call 647-344-0101</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo-wrap">
+          <svg width="36" height="36" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="The Boutique Condo Dental badge mark">
+            <circle cx="100" cy="100" r="96" stroke="#1C1916" stroke-width="5" fill="white"/>
+            <circle cx="100" cy="100" r="84" stroke="#1C1916" stroke-width="2.5" fill="none"/>
+            <path id="topArcF" d="M 22,100 A 78,78 0 0,1 178,100" fill="none"/>
+            <text font-family="'Jost', Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="3" fill="#1C1916" text-anchor="middle"><textPath href="#topArcF" startOffset="50%">THE BOUTIQUE CONDO</textPath></text>
+            <path id="botArcF" d="M 22,100 A 78,78 0 0,0 178,100" fill="none"/>
+            <text font-family="'Jost', Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="3" fill="#1C1916" text-anchor="middle"><textPath href="#botArcF" startOffset="50%">NELSON STREET</textPath></text>
+            <line x1="28" y1="93" x2="172" y2="93" stroke="#1C1916" stroke-width="2.5"/>
+            <line x1="28" y1="120" x2="172" y2="120" stroke="#1C1916" stroke-width="2.5"/>
+            <line x1="30" y1="88" x2="30" y2="125" stroke="#1C1916" stroke-width="3"/>
+            <line x1="36" y1="88" x2="36" y2="125" stroke="#1C1916" stroke-width="3"/>
+            <line x1="42" y1="88" x2="42" y2="125" stroke="#1C1916" stroke-width="3"/>
+            <line x1="48" y1="88" x2="48" y2="125" stroke="#1C1916" stroke-width="3"/>
+            <line x1="152" y1="88" x2="152" y2="125" stroke="#1C1916" stroke-width="3"/>
+            <line x1="158" y1="88" x2="158" y2="125" stroke="#1C1916" stroke-width="3"/>
+            <line x1="164" y1="88" x2="164" y2="125" stroke="#1C1916" stroke-width="3"/>
+            <line x1="170" y1="88" x2="170" y2="125" stroke="#1C1916" stroke-width="3"/>
+            <text x="100" y="90" font-family="'Jost', Arial, sans-serif" font-size="11" font-weight="600" letter-spacing="3" fill="#1C1916" text-anchor="middle">EST</text>
+            <text x="100" y="115" font-family="'Jost', Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="2" fill="#1C1916" text-anchor="middle">DENTAL</text>
+            <text x="100" y="134" font-family="'Jost', Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="3" fill="#1C1916" text-anchor="middle">2018</text>
+          </svg>
+          <span style="font-family:var(--ff-display);font-size:15px;font-weight:500;color:var(--ink);">The Boutique Condo Dental</span>
+        </div>
+        <p>Personalized dental care in the Entertainment District. We work on fillings — and feelings.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Preventative Care</a></li>
+          <li><a href="#services">Cosmetic Dentistry</a></li>
+          <li><a href="#services">Teeth Whitening</a></li>
+          <li><a href="#services">Oral Surgery</a></li>
+          <li><a href="#services">All Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Clinic</h4>
+        <ul>
+          <li><a href="#team">Our Team</a></li>
+          <li><a href="#why">Our Office</a></li>
+          <li><a href="#reviews">New Patients</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#254c4b434a65514d40474a50514c545040464a4b414a41404b5144490b464a48">Book Appointment</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 The Boutique Condo Dental &bull; 25 Nelson Street, Toronto, ON M5V 0G2 &bull; 647-344-0101</p>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  /* ── MOBILE NAV ── */
+  function toggleNav() {
+    var nav = document.getElementById('mobileNav');
+    nav.classList.toggle('open');
+    document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+  }
+
+  /* ══════════════════════════════════════════════════════
+     REVIEWS CAROUSEL — infinite loop with progress bar
+     REAL = 5 matches the 5 review cards above.
+  ══════════════════════════════════════════════════════ */
+  (function() {
+    var track    = document.getElementById('carouselTrack');
+    var prevBtn  = document.getElementById('carouselPrev');
+    var nextBtn  = document.getElementById('carouselNext');
+    var progress = document.getElementById('reviewProgress');
+    var REAL     = 5;
+    var busy     = false;
+    var realIdx  = 0;
+    var ci       = 0;
+
+    function spv() { return window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 3; }
+    function cw()  { var c = track.querySelector('.review-card'); return c ? c.offsetWidth : 0; }
+
+    function setBar(idx) {
+      progress.style.width = ((idx + 1) / REAL * 100) + '%';
+    }
+
+    function setPos(idx, animate) {
+      track.style.transition = animate ? 'transform .5s cubic-bezier(.4,0,.2,1)' : 'none';
+      track.style.transform  = 'translateX(-' + (idx * cw()) + 'px)';
+    }
+
+    function init() {
+      track.querySelectorAll('.clone').forEach(function(c) { c.parentNode.removeChild(c); });
+      var s    = spv();
+      var orig = Array.prototype.slice.call(track.querySelectorAll('.review-card:not(.clone)'));
+      for (var i = REAL - 1; i >= REAL - s; i--) {
+        var cl = orig[i].cloneNode(true); cl.classList.add('clone');
+        track.insertBefore(cl, track.firstChild);
+      }
+      for (var j = 0; j < s; j++) {
+        var cl2 = orig[j].cloneNode(true); cl2.classList.add('clone');
+        track.appendChild(cl2);
+      }
+      ci = s;
+      realIdx = 0;
+      setPos(ci, false);
+      setBar(0);
+    }
+
+    function step(dir) {
+      if (busy) return;
+      busy = true;
+      var s = spv();
+      ci += dir;
+      realIdx = ((realIdx + dir) % REAL + REAL) % REAL;
+      setPos(ci, true);
+      setBar(realIdx);
+      track.addEventListener('transitionend', function h() {
+        track.removeEventListener('transitionend', h);
+        if (ci <= 0) {
+          ci = REAL;
+          setPos(ci, false);
+        } else if (ci >= REAL + s) {
+          ci = s;
+          setPos(ci, false);
+        }
+        busy = false;
+      });
+    }
+
+    prevBtn.addEventListener('click', function() { step(-1); });
+    nextBtn.addEventListener('click', function() { step(1); });
+    window.addEventListener('resize', function() { init(); });
+    init();
+
+    /* Auto-advance every 5s, pause on hover */
+    var autoTimer = setInterval(function() { step(1); }, 5000);
+    var viewport = track.closest('.carousel-viewport') || track.parentElement;
+    viewport.addEventListener('mouseenter', function() { clearInterval(autoTimer); });
+    viewport.addEventListener('mouseleave', function() {
+      autoTimer = setInterval(function() { step(1); }, 5000);
+    });
+  })();
+</script>
+</body>
+</html>
